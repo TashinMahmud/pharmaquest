@@ -1,50 +1,30 @@
 # PharmaQuest
 
-PharmaQuest is a geography-based educational adventure game focused on medicines, diseases, and global health. Players explore a world map, visit different countries, and solve medicine-related challenges to unlock new regions and earn XP.
+PharmaQuest is a fun, interactive web game where you answer medicine-related quizzes for different countries on a world map. Unlock new countries as you progress, and track your score!
 
 ## Features
-- Interactive world map with country pins
-- Medicine and health quizzes for each country
-- Unlock new countries as you progress
-- Score tracking and XP system
-- Progress and score saved in your browser (localStorage)
-- Modern UI with Tailwind CSS
+- Interactive world map with clickable country pins
+- Medicine quizzes for Bangladesh, Japan, Australia, Sweden, Spain, and England
+- Unlock countries by scoring at least 80% on quizzes
+- Progress and scores saved in your browser
+- Modern, lively UI
 
 ## Getting Started
-
-### Prerequisites
-- Node.js (v16 or higher)
-- npm
-
-### Setup
-1. Clone the repository
+1. Clone this repo and install dependencies:
    ```bash
    git clone <your-repo-url>
    cd pharmaquest
-   ```
-2. Install dependencies
-   ```bash
    npm install
-   ```
-3. Start the development server
-   ```bash
    npm start
    ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Technologies Used
-- React + TypeScript
-- Tailwind CSS
-- React Router
-- LocalStorage
+2. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## How to Play
-1. Enter your name and click "Start".
-2. Click on Bangladesh to begin your first quiz.
-3. Score at least 80% to complete a country and unlock the next.
-4. Continue until all countries are completed!
-5. View your final score and play again if you like.
+1. Enter your name and click Start.
+2. Click a country pin to take its quiz.
+3. Score 80% or higher to unlock the next country.
+4. View your answers after completing a quiz.
+5. Use the Reset or Restart buttons to play again!
 
 ---
-
 Enjoy learning and exploring with PharmaQuest!
