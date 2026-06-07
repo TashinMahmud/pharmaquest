@@ -15,16 +15,6 @@ function HomePage() {
     localStorage.setItem('playerName', name);
     navigate('/game');
   };
-
-  const handleRestart = () => {
-    localStorage.removeItem('playerName');
-    localStorage.removeItem('countries');
-    localStorage.removeItem('score');
-    localStorage.removeItem('completedAnswers');
-    setName('');
-    navigate('/');
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-400 via-purple-300 to-pink-300 font-sans">
       <div className="backdrop-blur-md bg-white/60 rounded-3xl shadow-2xl p-10 flex flex-col items-center w-full max-w-md border border-white/40">

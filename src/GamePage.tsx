@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { initialCountries, Country } from "./data/countries";
-import { quizzes, QuizQuestion } from "./data/quizzes";
+import { quizzes } from "./data/quizzes";
 import QuizModal from "./components/QuizModal";
 import CongratModal from "./components/CongratModal";
 import { ReactComponent as WorldMapSVG } from './assets/world_map.svg';
