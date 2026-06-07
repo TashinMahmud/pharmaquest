@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build project 🚀
-        run: npm run build
+        run: npm run build && cp build/index.html build/404.html
         env:
           CI: false
 
