@@ -1,94 +1,83 @@
-# 🗺️ PharmaQuest — Interactive Medical World Map Game
+# 🧪 PharmaQuest — Interactive Medical Trivia Game
 
-[![React](https://img.shields.io/badge/React-19.1.0-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.1-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![React Router](https://img.shields.io/badge/React%20Router-7.6.3-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)](https://reactrouter.com/)
+<div align="center">
 
-**PharmaQuest** is an interactive, gamified web application built to test users on international medicine-related trivia and medical standards. Set on a beautifully designed interactive world map, players travel between country pins, unlock quizzes, and compete to earn high scores.
-
-* **Progressive Unlocks**: Score 80% or above on country quizzes to unlock access to subsequent destinations.
-* **Persistent Saves**: Locally caches player state, names, and scores utilizing the browser's storage engine.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-2C8EAD?style=for-the-badge&logo=google-chrome&logoColor=white)](https://TashinMahmud.github.io/pharmaquest)
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
 ---
 
-## 🎮 Game Engine Flow
+PharmaQuest is an interactive, gamified web application designed to test and expand knowledge of pharmacology and medicine. Players choose from multiple global region datasets, compete against active timers, build multipliers through correct streaks, and review their score cards.
 
-The game follows a simple yet engaging progression cycle powered by local react states and persistent caches.
+</div>
+
+---
+
+## 🎮 Game Engine Flow & Routing
+
+The application utilizes declarative React states and React Router to guide the player through the quiz journey:
 
 ```
-                      [ Name Entry / Start ]
-                                │
-                      [ Interactive Map UI ]
-                                │
-                   [ Select Country Pin / Quiz ]
-                                │
-                     [ Score Evaluation ]
-                   ┌────────────┴────────────┐
-                   ▼ (Score >= 80%)          ▼ (Score < 80%)
-           [ Unlock Next Country ]    [ Review Answers / Retry ]
-                   │
-           [ Save Progress (LocalStorage) ]
+                  +----------------------------------+
+                  |         LANDING SCREEN           |
+                  |  - Country Quiz Selection        |
+                  |  - High Score Ledger Board       |
+                  +----------------+-----------------+
+                                   | (Start Quiz)
+                                   v
+                  +----------------------------------+
+                  |           GAME RUNTIME           |
+                  |  - Question Deck Controller      |
+                  |  - Countdown Timer Loop          |
+                  |  - Streak Multipliers            |
+                  +----------------+-----------------+
+                                   | (Complete/Fail)
+                                   v
+                  +----------------------------------+
+                  |         RESULTS DISPLAY          |
+                  |  - Performance Breakdown Metrics |
+                  |  - Restart Option Anchor         |
+                  +----------------------------------+
 ```
 
-### Game Play Mechanics
-1. **Explore**: Navigate an interactive map utilizing custom coordinate pins.
-2. **Challenge**: Answer 10 country-specific pharmaceutical questions.
-3. **Persist**: Scores and unlocked nodes are saved directly using browser `localStorage` variables.
+---
+
+## 📂 Code Module Architecture
+
+*   **`src/App.tsx`**: Sets up global state context, sets base dark/light theme, and configures path routing.
+*   **`src/GamePage.tsx`**: The core game engine. Operates the interval timers, processes choice selections, tallies immediate points, and updates correct answer streaks.
+*   **`src/data/`**:
+    *   `quizzes.ts`: The static dataset containing questions, options, correct indexes, and detailed post-question explanations.
+    *   `countries.ts`: Metadata definitions for available global question packs (e.g. Bangladesh, United Kingdom, Japan).
+*   **`quizzes/`**: Reference text files (`quiz_bd.txt`, `quiz_jp.txt`) used for authoring and updates.
 
 ---
 
-## ⚡ Tech Stack & Core Libraries
-
-* **Frontend Library**: [React 19](https://react.dev/) — declarative components and state management.
-* **Typing**: [TypeScript](https://www.typescriptlang.org/) — strict type check constraints for state, routes, and questions.
-* **Styling**: [Tailwind CSS](https://tailwindcss.com/) — utility-first CSS configurations for map views and responsive grids.
-* **Router**: [React Router DOM v7](https://reactrouter.com/) — client-side route handlers.
-* **Build Scripts**: React-Scripts (Create-React-App environment).
-
----
-
-## 🚀 Getting Started
+## 🚀 Running Locally
 
 ### 1. Installation
-Clone the repository and install the development packages:
+Install project dependencies using npm:
 ```bash
-# Clone the repository
-git clone https://github.com/TashinMahmud/pharmaquest.git
-cd pharmaquest
-
-# Install packages
 npm install
 ```
 
-### 2. Running Locally
-Run the local dev server using:
+### 2. Development Run
+Boot up the local React development server:
 ```bash
 npm start
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser to start playing.
+The game will open automatically at: `http://localhost:3000`.
 
----
-
-## 🧭 Project Layout
-
-```
-pharmaquest/
-├── public/                  # Static assets (favicons, manifest.json)
-├── quizzes/                 # Local quiz datasets for countries
-├── src/                     # React source files
-│   ├── components/          # Game components (Map, Quiz, Results, Entry)
-│   ├── utils/               # LocalStorage wrappers, progress managers
-│   ├── App.tsx              # Main application root
-│   └── index.tsx            # Main renderer entry point
-├── bangladesh_quiz.txt      # Reference quiz text definitions
-├── tailwind.config.js       # Tailwind configuration file
-├── tsconfig.json            # TypeScript build configurations
-└── README.md                # Project documentation
+### 3. Production Build
+Generate a static compilation for hosting:
+```bash
+npm run build
 ```
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for complete details.
+Licensed under the MIT License.
