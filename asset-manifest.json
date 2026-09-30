@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/pharmaquest/static/css/main.594f8277.css",
+    "main.js": "/pharmaquest/static/js/main.b625d11c.js",
+    "static/js/453.8d634a00.chunk.js": "/pharmaquest/static/js/453.8d634a00.chunk.js",
+    "static/media/world_map.svg": "/pharmaquest/static/media/world_map.151e62505283bcf04dc6fede226d359d.svg",
+    "index.html": "/pharmaquest/index.html",
+    "main.594f8277.css.map": "/pharmaquest/static/css/main.594f8277.css.map",
+    "main.b625d11c.js.map": "/pharmaquest/static/js/main.b625d11c.js.map",
+    "453.8d634a00.chunk.js.map": "/pharmaquest/static/js/453.8d634a00.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.594f8277.css",
+    "static/js/main.b625d11c.js"
+  ]
+}
